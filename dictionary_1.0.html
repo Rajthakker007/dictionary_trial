@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dictionary</title>
+</head>
+<body>
+Your Text : <textarea name="tarea" id="tarea" cols="100" rows="10"></textarea><br><br>
+change words -: <input type="text" id="mword"> Replace With :- <input type="text" id="rword"><br>
+
+<input type="submit" value="submit" onclick="change()"> <br><br>
+<textarea name="output" id="output" cols="100" rows="10" readonly>Your Output will be here.</textarea>
+<script>
+    function change(){
+        var mword = document.getElementById("mword").value;
+        var rword = document.getElementById("rword").value;
+        var texta= document.getElementById("tarea").value;
+        var regexp = new RegExp(mword,'gi');
+        var matching = texta.replace(regexp,rword);
+        var output = document.getElementById("output");
+        output.value=matching;
+    }
+</script>
+</body>
+</html>
